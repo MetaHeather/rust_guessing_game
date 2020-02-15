@@ -1,3 +1,6 @@
+use std::io;
+
 fn main() {
-    println!("Hello, world!");
+    println!("Guess the hidden number between 1 and 100");
+    println!("Please input your guess: ");
 }
