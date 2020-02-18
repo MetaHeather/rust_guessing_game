@@ -1,6 +1,7 @@
 // to obtain input and print result we need to bring in the io library
 // the io library comes from the standard library known as std
 use std::io;
+use std::cmp::Ordering;
 use rand::Rng;
 
 fn main() {
@@ -23,5 +24,19 @@ fn main() {
     //  read_line returns a Result type which is used in .expect
         .expect("Failed to read line");
 
+    // converts user input string into a real number
+    let guess: u32 = guess.trim().parse()
+        .expect("Please type a number!");
+    
+     
     println!("You guessed: {}", guess);
+
+    // match expression is made up of arms. 
+    // an arm consist of a pattern
+    // Rust compares the value given to match to each arms patern in turn
+    match guess.cmp(&secret_number) {
+        Ordering::Less => println!("Too small!"),
+        Ordering::Greater => println!("Too big!"),
+        Ordering::Equal => println!("You win!"),
+    }
 }
