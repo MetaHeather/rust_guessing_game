@@ -26,9 +26,13 @@ fn main() {
         //  read_line returns a Result type which is used in .expect
             .expect("Failed to read line");
 
-        // converts user input string into a real number
-        let guess: u32 = guess.trim().parse()
-            .expect("Please type a number!");
+        // converts user input string into an unsigned 32 bit integer
+        // match decides what pattern the result from parse matches
+        let guess: u32 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
+
         
             
         println!("You guessed: {}", guess);
