@@ -11,8 +11,6 @@ fn main() {
     // the second param so this will generate a number between 1 and 100
     let secret_number = rand::thread_rng().gen_range(1, 101);
     
-    println!("The secret number is: {}", secret_number);
-
     // loop to give user multiple chances at guessing the number
     loop {
         println!("Please input your guess: ");
@@ -34,7 +32,6 @@ fn main() {
         };
 
         
-            
         println!("You guessed: {}", guess);
 
         // match expression is made up of arms. 
