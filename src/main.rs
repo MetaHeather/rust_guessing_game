@@ -28,7 +28,10 @@ fn main() {
         // match decides what pattern the result from parse matches
         let guess: u32 = match guess.trim().parse() {
             Ok(num) => num,
-            Err(_) => continue,
+            Err(_) => {
+                println!("Enter a number, not letters or symbols. Try again!");
+                continue;    
+            }
         };
 
         
